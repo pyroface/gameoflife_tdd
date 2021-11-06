@@ -64,4 +64,11 @@ public class CellTest {
    */
   //RULE 3 END
 
+  //RULE 4. Any dead cell with exactly three live neighbors becomes a live cell.
+  @Test
+  public void WillStartLivingWithThreeNeighbors(){
+    Cell cell = new Cell(Cell.CellState.alive);
+    CellState a = cell.GetNextState(3);
+    assertEquals(Cell.CellState.alive, a);
+  }
 }
